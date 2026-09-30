@@ -1,5 +1,8 @@
 # spring-cli
 
+[![CI](https://github.com/nikhilvibhav/spring-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/nikhilvibhav/spring-cli/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/spring-cli.svg)](https://pypi.org/project/spring-cli/)
+
 An interactive command-line scaffolder for Spring Boot projects (Java/Kotlin) —
 like [start.spring.io](https://start.spring.io), but as a terminal wizard that
 also layers in Docker, database/cache configuration, and CI out of the box.
@@ -86,3 +89,17 @@ spring_cli/
     docker.py           Dockerfile + docker-compose.yml
     ci.py               GitHub Actions workflow
 ```
+
+## Development
+
+```powershell
+git clone https://github.com/nikhilvibhav/spring-cli.git
+cd spring-cli
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -e ".[dev]"
+pytest
+```
+
+CI runs the test suite across Python 3.9–3.13 and verifies the built wheel
+installs cleanly on every push/PR to `main` (see `.github/workflows/ci.yml`).
