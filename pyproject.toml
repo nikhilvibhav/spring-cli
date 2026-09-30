@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spring-cli"
+version = "0.1.0"
+description = "Interactive CLI to scaffold Spring Boot (Java/Kotlin) projects, similar to start.spring.io."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Spring CLI" }]
+dependencies = [
+    "questionary>=2.1.1",
+    "requests>=2.34.2",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+spring-cli = "spring_cli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spring_cli*"]
+
+[tool.setuptools.package-data]
+"spring_cli" = ["templates/**/*"]
