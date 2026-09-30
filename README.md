@@ -6,9 +6,24 @@ also layers in Docker, database/cache configuration, and CI out of the box.
 
 ## Install
 
+Install directly from PyPI (recommended):
+
 ```powershell
-pipx install .
-# or, for local development:
+pipx install spring-cli
+# or
+pip install spring-cli
+```
+
+Other ways to get it:
+
+```powershell
+# Latest main branch, straight from GitHub — no PyPI, no cloning
+pipx install git+https://github.com/nikhilvibhav/spring-cli.git
+
+# From a downloaded release wheel (see https://github.com/nikhilvibhav/spring-cli/releases)
+pipx install ./spring_cli-<version>-py3-none-any.whl
+
+# From a local clone, for development (editable install)
 pip install -e .
 ```
 
